@@ -35,12 +35,8 @@ public class Vector3D {
     }
 
 
-    public Vector3D scalarMultiply(Vector3D vector) {
-        a *= vector.getA();
-        b *= vector.getB();
-        c *= vector.getC();
-        findLength();
-        return this;
+    public double scalarMultiply(Vector3D vector) {
+        return a * vector.getA() + b * vector.getB() + c * vector.getC();
     }
 
     public Vector3D add(Vector3D vector) {
@@ -77,15 +73,15 @@ public class Vector3D {
         return a == vector.getA() && b == vector.getB() && c == vector.getC();
     }
 
-    public Vector3D compareTo(Vector3D vector) {
-        if(length > vector.getLength()){
+    public double compareTo(Vector3D vector) {
+        if (length > vector.getLength()) {
             System.out.println("Больше");
-        } else if(length < vector.getLength()){
+        } else if (length < vector.getLength()) {
             System.out.println("Меньше");
-        }else {
+        } else {
             System.out.println("Равны");
         }
-        return this;
+        return length - vector.length;
     }
 
     public void printInfo() {

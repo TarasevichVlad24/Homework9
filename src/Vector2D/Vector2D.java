@@ -29,11 +29,8 @@ public class Vector2D {
         return length;
     }
 
-    public Vector2D scalarMultiply(Vector2D vector) {
-        a *= vector.getA();
-        b *= vector.getB();
-        findLength();
-        return this;
+    public double scalarMultiply(Vector2D vector) {
+        return a * vector.getA() + b * vector.getB();
     }
 
     public Vector2D add(Vector2D vector) {
@@ -62,12 +59,13 @@ public class Vector2D {
         }
         return result;
     }
+
     public double compareTo(Vector2D vector) {
-        if(length > vector.length){
+        if (length > vector.length) {
             System.out.println("Больше");
-        } else if(length < vector.length){
+        } else if (length < vector.length) {
             System.out.println("Меньше");
-        }else {
+        } else {
             System.out.println("Равны");
         }
         return length - vector.length;
