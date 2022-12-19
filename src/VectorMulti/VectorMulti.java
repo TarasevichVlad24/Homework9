@@ -29,9 +29,8 @@ public class VectorMulti {
 
     public double scalarMultiply (VectorMulti vector){
         double sum = 0;
-       for(int i=0;i<arrCoords.length;i++){
-           arrCoords[i] *= vector.getArrCoords()[i];
-           sum+=arrCoords[i];
+        for(int i=0;i<arrCoords.length;i++){
+           sum+= arrCoords[i] * vector.getArrCoords()[i];
         }
         return sum;
 
