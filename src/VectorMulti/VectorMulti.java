@@ -27,13 +27,13 @@ public class VectorMulti {
         return length;
     }
 
-    public VectorMulti scalarMultiply (VectorMulti vector){
-        double sum;
+    public double scalarMultiply (VectorMulti vector){
+        double sum = 0;
        for(int i=0;i<arrCoords.length;i++){
            arrCoords[i] *= vector.getArrCoords()[i];
-           sum = arrCoords[i]*vector.getArrCoords()[i];
+           sum+=arrCoords[i];
         }
-        return this;
+        return sum;
 
     }
     public VectorMulti add (VectorMulti vector){
